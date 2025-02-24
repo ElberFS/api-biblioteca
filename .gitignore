@@ -1,0 +1,21 @@
+# Archivos compilados
+/target/
+/build/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.idea/
+*.iml
+*.log
+
+# Dependencias locales
+/.mvn/
+/mvnw
+/mvnw.cmd
+
+# Configuraciones sensibles
+application.properties
+application.yml
