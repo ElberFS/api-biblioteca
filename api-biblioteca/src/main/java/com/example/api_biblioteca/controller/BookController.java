@@ -15,10 +15,10 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+
     @GetMapping
-    public ResponseEntity<List<Book>> getAllBooks() {
-        List<Book> books = bookService.getAllBooks();
-        return ResponseEntity.ok(books);
+    public List<Book> getAllBooks() {
+        return bookService.getAllBooks();
     }
 
     @GetMapping("/{id}")
@@ -31,6 +31,13 @@ public class BookController {
     public Book createBook(@RequestBody Book book) {
         return bookService.createBook(book);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book bookDetails) {
+        Book updatedBook = bookService.updateBook(id, bookDetails);
+        return ResponseEntity.ok(updatedBook);
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
